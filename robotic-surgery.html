@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotic-Assisted Joint Replacement | Dr. V. N. Deshpande</title>
+  <meta name="description" content="Experience advanced robotic-assisted joint replacement by Dr. V. N. Deshpande. Using Smith & Nephew technology for precision, faster recovery, and better outcomes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ========== BASE DESIGN SYSTEM ========== */
+    :root {
+      --navy: #142B45;
+      --teal: #159B8A;
+      --teal-dark: #0F7A6C;
+      --light-blue: #EAF3F9;
+      --bg: #F5F8FB;
+      --white: #FFFFFF;
+      --text: #263548;
+      --text-light: #5A6B7D;
+      --border: #DCE6EE;
+      --shadow-sm: 0 2px 8px rgba(20,43,69,.06);
+      --shadow-md: 0 8px 30px rgba(20,43,69,.10);
+      --shadow-lg: 0 20px 60px rgba(20,43,69,.14);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --font-head: 'Manrope', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: .3s cubic-bezier(.4,0,.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4,h5 { font-family: var(--font-head); color: var(--navy); line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+    .container { width: min(1240px, 92%); margin-inline: auto; }
+    .section { padding: 5rem 0; }
+    .section--light { background: var(--light-blue); }
+    .section--navy { background: var(--navy); color: #fff; }
+    .section--navy h2, .section--navy h3 { color: #fff; }
+    .eyebrow { display: inline-block; font-family: var(--font-head); font-weight: 700; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); margin-bottom: .75rem; }
+    .section-head { max-width: 720px; margin-bottom: 2.5rem; }
+    .section-head h2 { font-size: clamp(1.75rem, 3.2vw, 2.6rem); font-weight: 800; margin-bottom: .75rem; }
+    .section-head p { color: var(--text-light); font-size: 1.05rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .9rem 1.8rem; border-radius: 50px; font-family: var(--font-head); font-weight: 700; font-size: .95rem; transition: var(--transition); border: 2px solid transparent; }
+    .btn--primary { background: var(--teal); color: #fff; }
+    .btn--primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(21,155,138,.3); }
+    .btn--outline { border-color: var(--teal); color: var(--teal); }
+    .btn--outline:hover { background: var(--teal); color: #fff; }
+    .btn--outline-light { border-color: rgba(255,255,255,0.4); color: #fff; }
+    .btn--outline-light:hover { background: rgba(255,255,255,0.1); }
+    .btn--sm { padding: .6rem 1.2rem; font-size: .85rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .card { background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); transition: var(--transition); }
+    .card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+
+    /* ========== TOP BAR & HEADER ========== */
+    .topbar { background: var(--navy); color: rgba(255, 255, 255, 0.85); font-size: 0.8rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    .topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .topbar__left { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .topbar__item { display: flex; align-items: center; gap: 0.4rem; font-weight: 500; }
+    .topbar__item svg { width: 15px; height: 15px; color: var(--teal); flex-shrink: 0; }
+    .topbar__social { display: flex; gap: 0.6rem; }
+    .topbar__social a { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; transition: all 0.3s ease; }
+    .topbar__social a:hover { background: var(--teal); transform: translateY(-2px); }
+    .topbar__social svg { width: 14px; height: 14px; }
+
+    .site-header { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); transition: var(--transition); }
+    .site-header.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: .8rem 0; }
+    .logo { display: flex; align-items: center; gap: .7rem; }
+    .logo__img { width: 48px; height: 48px; object-fit: contain; border-radius: 10px; flex-shrink: 0; display: block; }
+    .logo__text { font-family: var(--font-head); font-weight: 800; font-size: 1.05rem; color: var(--navy); line-height: 1.2; }
+    .logo__text small { display: block; font-size: .65rem; font-weight: 500; color: var(--teal); letter-spacing: .06em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: .25rem; }
+    .nav-links > li > a, .nav-links > li > button { padding: .55rem .85rem; border-radius: 8px; font-size: .88rem; font-weight: 500; color: var(--text); transition: var(--transition); display: flex; align-items: center; gap: .3rem; }
+    .nav-links > li > a:hover, .nav-links > li > button:hover, .nav-links > li > a.active { color: var(--teal); background: var(--light-blue); }
+    .dropdown { position: relative; }
+    .dropdown__panel { position: absolute; top: calc(100% + 8px); left: 0; background: #fff; min-width: 240px; border-radius: var(--radius-sm); box-shadow: var(--shadow-lg); border: 1px solid var(--border); padding: .5rem; opacity: 0; visibility: hidden; transform: translateY(8px); transition: var(--transition); z-index: 100; }
+    .dropdown:hover .dropdown__panel { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown__panel a { display: block; padding: .6rem .8rem; border-radius: 6px; font-size: .85rem; color: var(--text-light); transition: var(--transition); }
+    .dropdown__panel a:hover { background: var(--light-blue); color: var(--teal); }
+    .nav-cta { display: flex; align-items: center; gap: .75rem; }
+    .hamburger { display: none; width: 44px; height: 44px; border-radius: 10px; background: var(--light-blue); place-items: center; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 20px; height: 2px; background: var(--navy); border-radius: 2px; transition: var(--transition); }
+
+    /* ========== PAGE SPECIFIC CSS ========== */
+    /* Dark Tech Hero */
+    .tech-hero { padding: 6rem 0; background: var(--navy); color: #fff; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    .tech-hero::before { content: ''; position: absolute; top: -50%; right: -10%; width: 800px; height: 800px; background: radial-gradient(circle, rgba(21,155,138,0.15) 0%, rgba(20,43,69,0) 70%); border-radius: 50%; z-index: 0; }
+    .tech-hero .hero__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+    .hero__eyebrow { display: inline-flex; align-items: center; gap: .5rem; background: rgba(21,155,138,.2); color: var(--teal); font-family: var(--font-head); font-weight: 700; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; padding: .45rem 1rem; border-radius: 50px; margin-bottom: 1.25rem; }
+    .tech-hero h1 { color: #fff; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .tech-hero p { color: rgba(255,255,255,0.75); font-size: 1.05rem; max-width: 520px; margin-bottom: 1.5rem; }
+    .tech-hero .hero__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+    .tech-hero .hero__visual { display: grid; place-items: center; }
+    .tech-image-box { width: 100%; max-width: 450px; aspect-ratio: 4/3; border-radius: var(--radius); border: 2px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); overflow: hidden; background: #1a3a5c; display: grid; place-items: center; position: relative; }
+    .tech-image-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
+    .tech-image-box::after { content: 'Live 3D Mapping'; position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: var(--teal); font-size: 0.75rem; padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(21,155,138,0.3); font-family: var(--font-head); letter-spacing: 1px; }
+
+    /* How It Works Cards */
+    .process-card { background: #fff; border-radius: var(--radius); padding: 2rem; border-top: 4px solid var(--teal); position: relative; }
+    .process-num { position: absolute; top: -20px; left: 2rem; width: 40px; height: 40px; background: var(--navy); color: #fff; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-family: var(--font-head); border: 3px solid #fff; }
+    
+    /* Myth vs Fact */
+    .myth-fact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--radius); overflow: hidden; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
+    .myth-box { background: #FFF5F5; padding: 2rem; position: relative; }
+    .fact-box { background: #F0FDF4; padding: 2rem; position: relative; }
+    .tag-myth { position: absolute; top: -12px; left: 2rem; background: #E53E3E; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; }
+    .tag-fact { position: absolute; top: -12px; left: 2rem; background: var(--teal); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; }
+    .myth-box p, .fact-box p { margin: 0; font-size: 0.95rem; color: var(--text); font-weight: 500; }
+
+    /* ========== FOOTER & MISC ========== */
+    .site-footer { background: var(--navy); color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+    .site-footer h4 { color: #fff; font-size: .95rem; margin-bottom: 1rem; }
+    .site-footer a { font-size: .85rem; opacity: .75; transition: var(--transition); display: block; padding: .22rem 0; }
+    .site-footer a:hover { opacity: 1; color: var(--teal); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.5rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: .78rem; }
+    .floating-actions { position: fixed; right: 1.25rem; bottom: 1.5rem; z-index: 900; display: flex; flex-direction: column; gap: .75rem; }
+    .fab { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; color: #fff; border: 3px solid #fff; box-shadow: 0 4px 15px rgba(20, 43, 69, 0.2); transition: var(--transition); cursor: pointer; }
+    .fab:hover { transform: scale(1.08); }
+    .fab--whatsapp { background: var(--teal); }
+    .fab--call { background: var(--navy); }
+    .mt-1 { margin-top: .5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; } .mt-4 { margin-top: 2rem; }
+    .mb-1 { margin-bottom: .5rem; } .mb-2 { margin-bottom: 1rem; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .tech-hero .hero__grid { grid-template-columns: 1fr; text-align: center; }
+      .tech-hero p { margin-inline: auto; }
+      .tech-hero .hero__actions { justify-content: center; }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .site-header { backdrop-filter: none !important; background: #ffffff !important; }
+      .hamburger { display: flex !important; position: fixed !important; top: 14px !important; right: 4% !important; background: transparent !important; border: none !important; width: 40px; height: 40px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; z-index: 10010 !important; }
+      .hamburger span { width: 24px; height: 2px; background: var(--navy) !important; border-radius: 2px; }
+      .nav-links { position: fixed !important; top: 0; right: 0 !important; width: 300px; max-width: 85vw; height: 100dvh; background: #ffffff !important; flex-direction: column; align-items: stretch; padding: 80px 20px 20px; transform: translateX(100%) !important; transition: transform 0.35s ease !important; z-index: 10005 !important; box-shadow: -5px 0 25px rgba(0,0,0,0.15); overflow-y: auto; margin: 0; display: flex !important; }
+      .nav-links.open { transform: translateX(0) !important; }
+      .nav-links > li > a, .nav-links > li > button { padding: 15px 0; font-size: 1rem; width: 100%; border-bottom: 1px solid var(--border); border-radius: 0; color: var(--text) !important; background: transparent !important; display: flex; justify-content: space-between; }
+      .dropdown__panel { position: static !important; box-shadow: none !important; border: none !important; padding: 0 0 0 15px !important; background: var(--bg) !important; display: none; }
+      .dropdown.open .dropdown__panel { display: block !important; }
+      .nav-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(20, 43, 69, 0.7); z-index: 10000; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+      .nav-overlay.active { opacity: 1; visibility: visible; }
+      .topbar__social { display: none !important; }
+      .topbar .container { justify-content: center; }
+      .nav-cta .btn { display: none; }
+      .logo__img { width: 36px !important; height: 36px !important; }
+      .logo__text { font-size: 0.95rem !important; }
+      .section { padding: 3rem 0; }
+      .grid-3, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .myth-fact-row { grid-template-columns: 1fr; }
+      .tag-myth, .tag-fact { left: 1rem; }
+      .myth-box, .fact-box { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__left">
+        <span class="topbar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Ahilyanagar (Ahmednagar), Maharashtra
+        </span>
+        <span class="topbar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg>
+          Orthopedic & Joint Replacement Specialist
+        </span>
+      </div>
+      <div class="topbar__social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#142B45"></polygon></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.png" alt="Logo" class="logo__img" onerror="this.style.display='none'">
+        <div class="logo__text">Dr. V. N. Deshpande<small>Orthopedic Surgeon</small></div>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+            <button>Treatments ▾</button>
+            <div class="dropdown__panel">
+              <a href="treatments.html">All Treatments</a>
+              <a href="knee-replacement.html">Knee Replacement</a>
+              <a href="hip-replacement.html">Hip Replacement</a>
+              <a href="shoulder-treatment.html">Shoulder Treatment</a>
+              <a href="spine-treatment.html">Spine & Back Pain</a>
+              <a href="arthritis.html">Rheumatoid Arthritis</a>
+            </div>
+          </li>
+          <li><a href="robotic-surgery.html" class="active">Robotic Surgery</a></li>
+          <li><a href="patient-stories.html">Patient Stories</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn--primary btn--sm">Book Appointment</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. TECH HERO -->
+    <section class="tech-hero">
+      <div class="container hero__grid">
+        <div>
+          <div class="hero__eyebrow">✦ Next-Generation Orthopedics</div>
+          <h1>Precision Technology. Personalised Care.</h1>
+          <p>Experience the future of joint replacement with Robotic-Assisted Surgery using Smith & Nephew technology. We combine the skill of an expert surgeon with the precision of a robotic arm for superior outcomes.</p>
+          <div class="hero__actions mt-3">
+            <a href="contact.html" class="btn btn--primary">Discuss Robotic Options</a>
+            <a href="#how-it-works" class="btn btn--outline-light">How It Works</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="tech-image-box">
+            <!-- Yahan Robotic OT ya Tech ki image daalein -->
+            <img src="assets/images/robotic-surgery-hero.jpg" alt="Robotic Surgery" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxYTNhNWMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiMxNTlCOEEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlJvYm90aWMgU3VyZ2VyeTwvdGV4dD48L3N2Zz4=';">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="section-head" style="text-align: center; margin-inline: auto;">
+          <span class="eyebrow">The Process</span>
+          <h2>How Robotic-Assisted Surgery Works</h2>
+          <p>It's important to understand that the robot does not perform the surgery. Your surgeon remains in complete control, using the robotic system as an advanced tool for precision.</p>
+        </div>
+        
+        <div class="grid-3" style="margin-top: 3rem;">
+          <div class="process-card">
+            <div class="process-num">1</div>
+            <h3>3D CT Scan Mapping</h3>
+            <p class="mt-2" style="color: var(--text-light); font-size: 0.9rem;">Before surgery, a detailed 3D CT scan of your joint is taken. This creates a digital twin of your unique anatomy.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">2</div>
+            <h3>Pre-Surgical Planning</h3>
+            <p class="mt-2" style="color: var(--text-light); font-size: 0.9rem;">Your surgeon uses the 3D model to plan the exact size, position, and alignment of your implant down to the millimeter.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">3</div>
+            <h3>Live Guided Execution</h3>
+            <p class="mt-2" style="color: var(--text-light); font-size: 0.9rem;">During surgery, the robotic arm provides real-time feedback, preventing the surgeon from moving outside the planned boundaries and ensuring perfect precision.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. BENEFITS OF ROBOTIC SURGERY -->
+    <section class="section section--light">
+      <div class="container grid-2" style="align-items: center;">
+        <div>
+          <span class="eyebrow">Why It Matters</span>
+          <h2>Benefits of Robotic Precision</h2>
+          <p style="color: var(--text-light); margin-top: 1rem; font-size: 1.05rem;">Robotic-assisted technology helps us achieve a level of accuracy that is difficult to achieve with traditional manual instruments.</p>
+          
+          <ul style="margin-top: 1.5rem;">
+            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+              <span style="background: var(--teal); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 0.8rem; flex-shrink: 0;">✓</span>
+              <div><strong>Highly Accurate Implant Alignment:</strong> Better alignment means the implant feels more natural.</div>
+            </li>
+            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+              <span style="background: var(--teal); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 0.8rem; flex-shrink: 0;">✓</span>
+              <div><strong>Less Soft Tissue Damage:</strong> The robotic arm stays exactly within the planned bone boundaries, sparing surrounding muscles and ligaments.</div>
+            </li>
+            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+              <span style="background: var(--teal); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 0.8rem; flex-shrink: 0;">✓</span>
+              <div><strong>Faster Recovery:</strong> Less trauma to the body often leads to reduced pain and a quicker return to daily life.</div>
+            </li>
+            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+              <span style="background: var(--teal); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 0.8rem; flex-shrink: 0;">✓</span>
+              <div><strong>Longer Implant Lifespan:</strong> Perfect alignment reduces uneven wear and tear, potentially increasing the lifespan of the joint replacement.</div>
+            </li>
+          </ul>
+        </div>
+        <div style="background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow-md);">
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">Technology Highlight</h3>
+          <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1rem;">We utilize the <strong>Smith & Nephew</strong> robotic system, a globally trusted platform for orthopedic procedures.</p>
+          <div style="background: var(--light-blue); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.85rem; color: var(--teal-dark); font-weight: 600;">
+            * Clinical outcomes vary by patient. Suitability is determined after a thorough evaluation.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. MYTHS VS FACTS -->
+    <section class="section">
+      <div class="container" style="max-width: 900px;">
+        <div class="section-head" style="text-align: center; margin-inline: auto;">
+          <span class="eyebrow">Clearing the Air</span>
+          <h2>Robotic Surgery: Myths vs Facts</h2>
+        </div>
+
+        <div class="myth-fact-row">
+          <div class="myth-box">
+            <span class="tag-myth">Myth</span>
+            <p>"The robot performs the surgery by itself."</p>
+          </div>
+          <div class="fact-box">
+            <span class="tag-fact">Fact</span>
+            <p>The robot is a tool controlled by the surgeon. The surgeon makes all the decisions and guides the robotic arm.</p>
+          </div>
+        </div>
+
+        <div class="myth-fact-row">
+          <div class="myth-box">
+            <span class="tag-myth">Myth</span>
+            <p>"Robotic surgery is an experimental procedure."</p>
+          </div>
+          <div class="fact-box">
+            <span class="tag-fact">Fact</span>
+            <p>Robotic joint replacement is a proven, FDA-approved technology that has been used successfully worldwide for many years.</p>
+          </div>
+        </div>
+
+        <div class="myth-fact-row">
+          <div class="myth-box">
+            <span class="tag-myth">Myth</span>
+            <p>"It means my surgery will take much longer."</p>
+          </div>
+          <div class="fact-box">
+            <span class="tag-fact">Fact</span>
+            <p>While setup takes a little time, the actual bone preparation and implant placement are highly efficient and often result in less time under anesthesia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="section section--navy">
+      <div class="container" style="text-align: center;">
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 1rem;">Is Robotic Surgery Right for You?</h2>
+        <p style="color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-inline: auto;">Schedule a consultation to find out if you are a candidate for this advanced precision technology.</p>
+        <a href="contact.html" class="btn btn--primary">Book an Appointment</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo mb-2"><div class="logo__text" style="color:#fff">Dr. V. N. Deshpande<small>Orthopedic Surgeon</small></div></div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Treatments</h4>
+          <a href="knee-replacement.html">Knee Replacement</a>
+          <a href="hip-replacement.html">Hip Replacement</a>
+          <a href="robotic-surgery.html">Robotic Surgery</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>📍 Ahilyanagar</p>
+          <p>📞 [Verified phone]</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Dr. V. N. Deshpande. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTIONS -->
+  <div class="floating-actions">
+    <a href="https://wa.me/PLACEHOLDER" class="fab fab--whatsapp" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+    <a href="tel:+91PLACEHOLDER" class="fab fab--call" aria-label="Call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </a>
+  </div>
+
+  <script>
+    const progress = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+      if (progress) progress.style.width = pct + '%';
+      const header = document.getElementById('siteHeader');
+      if (header) header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const body = document.body;
+    let overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    function toggleMenu() {
+      if (!navLinks || !hamburger) return;
+      const isOpen = navLinks.classList.contains('open');
+      if (isOpen) {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+        overlay.classList.remove('active');
+        body.style.overflow = '';
+      } else {
+        navLinks.classList.add('open');
+        hamburger.classList.add('open');
+        overlay.classList.add('active');
+        body.style.overflow = 'hidden';
+      }
+    }
+    if (hamburger) hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('.dropdown > button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
